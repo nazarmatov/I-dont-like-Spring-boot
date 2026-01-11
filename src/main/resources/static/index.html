@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Characters Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Characters</h1>
+
+    <div class="filters">
+        <input type="text" id="nameFilter" placeholder="Filter by name">
+        <select id="sideFilter">
+            <option value="">All sides</option>
+            <option value="LIGHT">LIGHT</option>
+            <option value="DARK">DARK</option>
+        </select>
+        <button onclick="loadCharacters()">Apply</button>
+    </div>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Force</th>
+            <th>Side</th>
+        </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+    </table>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
