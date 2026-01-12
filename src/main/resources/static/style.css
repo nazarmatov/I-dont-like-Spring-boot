@@ -25,12 +25,6 @@ input, select, button {
     border: none;
 }
 
-button {
-    background: #2563eb;
-    color: white;
-    cursor: pointer;
-}
-
 table {
     width: 100%;
     border-collapse: collapse;

@@ -60,13 +60,15 @@ public class CharacterController {
         return characterService.getCharacterBySide(side);
     }
 
-    @GetMapping("/{name}")
-    public ResponseEntity<Character> getCharacterByName(@PathVariable String name){
+    @GetMapping("/search/{name}")
+    public ResponseEntity<Character> getCharacterByName(@PathVariable String name) {
         Optional<Character> character = characterService.getCharacterByName(name);
-        if (character != null) {
-            return ResponseEntity.noContent().build();
+
+        if (character.isPresent()) {
+            return ResponseEntity.ok(character.get());
         } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return ResponseEntity.notFound().build();
         }
     }
+
 }
